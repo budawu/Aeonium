@@ -1,0 +1,20 @@
+{% extends 'aeonium/base.html' %}
+{% block content %}
+<html lang="zh-CN">
+<head>
+    <h1 class="blog-title">Aeonium</h1>
+    <title >Blog</title>
+</head>
+<body>
+    <ul class="mainpart">
+    {% for i in posts %}
+       <h3><a href="{% url 'aeonium:detail' i.id %}">{{ i.title }}</a></h3>
+       <p class="detail">{{ i.date}}</p>
+       <p class="detail">{{ i.text|slice:100 }}</p>
+    {% empty %}    
+        还没有文章哦
+    {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock content %}

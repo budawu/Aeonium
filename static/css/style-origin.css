@@ -1,0 +1,43 @@
+.blog-title{
+    text-align: center;
+    line-height: 125px;
+    font-family: "Ubuntu Mono","Microsoft YaHei UI Light";
+    color: white;
+    height: 250px;
+}
+.mainpart{
+    border: 5px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 92.5%;
+}
+
+code{
+    
+    font-family: consolas;
+    font-size: 16px;
+    border-radius: 20px;
+}
+#head{
+    color: white;
+    font-size: 32px;
+}
+a:link {
+color: #3c4858; /*color of unvisited links*/
+}
+a:visited{
+    color: #3c4858;
+}
+a:hover{
+    color: #66ccff;
+}
+a {
+text-decoration: none; /*delete underline*/
+font-size: 20px;
+}
+
+.detail{
+color: #718099;
+}

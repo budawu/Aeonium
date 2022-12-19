@@ -1,0 +1,12 @@
+{% extends 'aeonium/base.html' %}
+<html>
+{% block content %}
+<body>
+    <p><a href="{% url 'aeonium:index' %}" id="head">Back</a>
+    <h1 class="blog-title">{{post.title}}</h1>
+    <div class="mainpart">
+        {{post.text|safe}}
+    </div>
+</body>
+{% endblock content %}
+</html>
