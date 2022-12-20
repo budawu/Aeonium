@@ -1,0 +1,5 @@
+monokai.css
+migrations/
+__pycache__/
+*.sqlite3
+ll_env/
