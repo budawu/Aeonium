@@ -42,3 +42,5 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
+## 编辑
+进入站点的/admin页面
