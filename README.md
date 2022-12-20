@@ -44,3 +44,8 @@ python manage.py runserver
 ```
 ## 编辑
 进入站点的/admin页面
+
+## TODO LIST
+* 支持LaTeX
+* 支持评论
+* 多种主题
