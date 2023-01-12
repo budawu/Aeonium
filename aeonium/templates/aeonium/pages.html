@@ -2,9 +2,9 @@
 <html>
 {% block content %}
 <head>
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    
+
 </head>
 <body>
 
@@ -12,7 +12,9 @@
     <div class="mainpart">
         {{page.content|safe}}
     </div>
-    <div id="gitalk-container">
+</br>
+</br>
+    <div id="gitalk-container" class="mainpart">
         <script>
         var gitalk = new Gitalk({
             clientID: 'GitHub Application Client ID',
