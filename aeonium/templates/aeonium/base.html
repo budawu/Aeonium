@@ -8,9 +8,9 @@
 <div id='nav-container'>
     <h2 id='nav'><a href="{% url 'aeonium:index' %}" id='for-nav'>{{site_name}}</a></h2>
     {% for a in pages %}
-        <a href="{% url 'aeonium:page' a.id %}" id="static-page">{{a.name}}</a>
+        <a href="{% url 'aeonium:page' a.id %}" >{{a.name}}</a>
     {% endfor %}
 </div>
 
-    
+
 {% block content %}{% endblock content %}

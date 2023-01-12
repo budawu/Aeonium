@@ -54,9 +54,12 @@ color: #718099;
     color: white;
     font-family: "Microsoft YaHei UI Light";
     font-size: 32px;
-    float: right;
+    /*float: right;
     padding: 0% 0%;
-
+*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 blockquote {
