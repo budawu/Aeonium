@@ -5,5 +5,6 @@ app_name = 'aeonium'
 urlpatterns = [
     #index page
     path('',views.index,name='index'),
-    path('posts/<int:id>/',views.detail,name='detail')
+    path('posts/<int:id>/',views.detail,name='detail'),
+    path('page/<int:id>/',views.page,name='page')
 ]

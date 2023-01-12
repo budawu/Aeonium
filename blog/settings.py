@@ -1,3 +1,4 @@
+# _*_ coding:utf-8 _*_
 """
 Django settings for blog project.
 
@@ -9,21 +10,29 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+#常用设置导航
+#基本设置27行
+#语言和时区122行
+#Markdown编辑器141行
 
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+os.path.join(BASE_DIR)
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+VERSION = '0.2.0'
+#站点名称
+#the mane of the site
+SITE_NAME= 'Aeonium'
 
+#警告：不要让秘钥泄露！
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-o(5n8dh=tr*(#ih2s(vad-((gh-yuak2k@3(1)p7-7mrex4uch'
 
+#警告：务必在部署时将该值设置为FALSE
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -110,9 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
-
+#语言
 LANGUAGE_CODE = 'zh-Hans'
-
+#时区
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
@@ -129,6 +138,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#markdown编辑器
 MDEDITOR_CONFIGS = {
 'default':{
     'width': '90%',  # 自定义编辑框宽度

@@ -1,9 +1,10 @@
 .blog-title{
     text-align: center;
     line-height: 125px;
-    font-family: "Ubuntu Mono","Microsoft YaHei UI Light";
+    font-family: "Ubuntu Light","Microsoft YaHei UI Light";
     color: white;
     height: 250px;
+    font-size: 35px;
 }
 .mainpart{
     border: 5px;
@@ -15,29 +16,62 @@
 }
 
 code{
-    
+
     font-family: consolas;
     font-size: 16px;
     border-radius: 20px;
+    background-color: gray;
 }
 #head{
     color: white;
     font-size: 32px;
 }
-a:link {
+#gotopost:link {
 color: #3c4858; /*color of unvisited links*/
 }
-a:visited{
+#gotopost:visited{
     color: #3c4858;
 }
-a:hover{
+#gotopost:hover{
     color: #66ccff;
 }
 a {
 text-decoration: none; /*delete underline*/
-font-size: 20px;
+color: #66ccff;
 }
 
 .detail{
 color: #718099;
 }
+
+#for-nav{
+    color: white;
+    font-family: "Ubuntu Thin","Microsoft YaHei UI Light";
+    font-size: 32px;
+    padding: 1% 1%;
+}
+#static-page{
+    color: white;
+    font-family: "Microsoft YaHei UI Light";
+    font-size: 32px;
+    float: right;
+    padding: 0% 0%;
+
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+

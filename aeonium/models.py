@@ -6,4 +6,11 @@ class Blog(models.Model):
     text = MDTextField()
     date = models.DateField(auto_now_add=True)
 
+class StaticPage(models.Model):
+    name = models.CharField(max_length=15)
+    content = MDTextField()
+    
+
+
+
 
