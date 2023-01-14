@@ -1,9 +1,9 @@
 .blog-title{
     text-align: center;
-    line-height: 125px;
+    line-height: 220px;
     font-family: "Ubuntu Light","Microsoft YaHei UI Light";
     color: white;
-    height: 250px;
+    height: 300px;
     font-size: 35px;
 }
 .mainpart{
@@ -15,13 +15,23 @@
     width: 92.5%;
 }
 
-code{
+p code{
 
     font-family: consolas;
     font-size: 16px;
-    border-radius: 20px;
-    background-color: #718099;
+    border-radius: 5px;
+    background-color: #F6F8FA;
+    color: #3c4858;
 }
+pre{
+    border-radius: 15px;
+}
+pre code{
+    font-family: consolas;
+    font-size: 16px;
+
+}
+
 #head{
     color: white;
     font-size: 32px;
@@ -46,18 +56,19 @@ color: #718099;
 
 #for-nav{
     color: white;
-    font-family: "Ubuntu Thin","Microsoft YaHei UI Light";
+    font-family: "Ubuntu","Microsoft YaHei UI Light";
     font-size: 32px;
-    padding: 1% 1%;
+    float: left;
+    padding: 0.8% 0.8%;
 }
 #static-page{
     color: white;
     font-family: "Microsoft YaHei UI Light";
-    font-size: 32px;
-    /*float: right;
-    padding: 0% 0%;
-*/
-    position: absolute;
+    font-size: 28px;
+    float: right;
+    padding: 0.8% 0.8%;
+    display: block;
+
     top: 0px;
     left: 0px;
 }

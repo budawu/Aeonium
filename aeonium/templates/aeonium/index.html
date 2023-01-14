@@ -2,17 +2,18 @@
 {% block content %}
 <html lang="zh-CN">
 <head>
-    <h1 class="blog-title">{{site_name}}</h1>
-    <title >Blog</title>
+
+    <title >{{site_name}}</title>
 </head>
 <body>
+    <h1 class="blog-title">{{site_name}}</h1>
     <ul class="mainpart">
     {% for i in posts %}
        <h3><a href="{% url 'aeonium:detail' i.id %}" id='gotopost'>{{ i.title }}</a></h3>
        <p class="detail">{{ i.date}}</p>
        <p class="detail">{{ i.text|slice:100 }}</p>
-    {% empty %}    
-        还没有文章哦
+    {% empty %}
+        Nothing is here~
     {% endfor %}
     </ul>
 </body>
