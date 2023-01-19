@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 os.path.join(BASE_DIR)
 
 
-VERSION = '1.1.0'
+VERSION = '1.1.1'
 #站点名称
 #the mane of the site
 SITE_NAME= 'Aeonium'

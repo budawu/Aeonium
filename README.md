@@ -49,6 +49,7 @@ python manage.py runserver
 
 ## 配置
 打开[settings.py](/blog/settings.py)进行配置
+在[detail.html](aeonium/templates/aeonium/detail.html)和[pages.html](pages.html)进行Gitalk配置
 ## TODO LIST
 * 支持LaTeX
 * 多种主题
