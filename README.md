@@ -47,7 +47,9 @@ python manage.py runserver
 ## 编辑
 进入站点的/admin页面
 
+## 配置
+打开[settings.py](/blog/settings.py)进行配置
 ## TODO LIST
 * 支持LaTeX
-* 支持评论
 * 多种主题
+
