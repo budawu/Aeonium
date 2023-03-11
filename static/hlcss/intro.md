@@ -1,2 +1,0 @@
-# hlcss
-for syntax highlighting 

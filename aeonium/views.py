@@ -12,7 +12,7 @@ def index(request):
     posts  = Blog.objects.order_by('-date')
     context = {'posts':posts,'site_name':settings.SITE_NAME,'pages':spage}
     return render(request,'aeonium/index.html',context)
-    
+
 def detail(request,id):
     '''detail of the article'''
     article = Blog.objects.get(id=id)
@@ -20,6 +20,7 @@ def detail(request,id):
         extensions=[
         'markdown.extensions.extra',
         'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
         ])
 
     context = { 'post': article,'site_name': settings.SITE_NAME,'pages':spage}
