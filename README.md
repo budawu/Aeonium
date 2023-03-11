@@ -12,34 +12,16 @@ Aeonium是一个极简的博客系统，基于Django。
 
 ## 快速开始
 环境：Python 3.11（或其他Django4支持的版本）
-
-创建虚拟环境
-```shell
-git clone https://github.com/budawu/Aeonium.git #获取
-python -m venv ll_env #创建一个叫做ll_env的虚拟环境
-```
-**注意：激活虚拟环境的方式，不同操作系统方法不同。**
-
-在Linux/MacOS:
-```shell
-source /ll_env/bin/activate
-```
-在Windows:
+Windows:
 ```powershell
-.\ll_env\Scripts\activate
+Import-Module .\setup.ps1
+Set-AeonuiumUp(<虚拟环境名称>,<语法高亮主题>)
 ```
-**激活后提示符应该有(ll_env)**
-在虚拟环境下执行以下指令：
+Mac和Linux：
 ```shell
-pip install -r requirements.txt #下载依赖的包
-cd static/hlcss
-pygmentize -S monokai -f html -a .codehilite > monokai.css #语法高亮的css
-cd ..
-cd ..
-python manage.py makemigrations aeonium
-python manage.py migrate
-python manage.py createsuperuser
+setup.sh [虚拟环境名称] [语法高亮主题]
 ```
+
 启动服务器：
 ```
 python manage.py runserver
@@ -49,8 +31,8 @@ python manage.py runserver
 
 ## 配置
 打开[settings.py](/blog/settings.py)进行配置
-在[detail.html](aeonium/templates/aeonium/detail.html)和[pages.html](pages.html)进行Gitalk配置
+在[detail.html](themes\origin\templates\detail.html)和[pages.html](themes\origin\templates\pages.html)进行Gitalk配置
 ## TODO LIST
 * 支持LaTeX
-* 多种主题
+
 
