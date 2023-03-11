@@ -11,7 +11,7 @@ def index(request):
     '''index page'''
     posts  = Blog.objects.order_by('-date')
     context = {'posts':posts,'site_name':settings.SITE_NAME,'pages':spage}
-    return render(request,'aeonium/index.html',context)
+    return render(request,'index.html',context)
 
 def detail(request,id):
     '''detail of the article'''
@@ -24,7 +24,7 @@ def detail(request,id):
         ])
 
     context = { 'post': article,'site_name': settings.SITE_NAME,'pages':spage}
-    return render(request, 'aeonium/detail.html', context)
+    return render(request, 'detail.html', context)
 
 def page(request,id):
     '''static page for blog'''
@@ -36,4 +36,4 @@ def page(request,id):
         ]
     )
     context = {'page':content,'site_name':settings.SITE_NAME,'pages':spage}
-    return render(request,'aeonium/pages.html',context)
+    return render(request,'pages.html',context)
