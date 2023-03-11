@@ -1,0 +1,111 @@
+.blog-title{
+    text-align: center;
+    line-height: 220px;
+    font-family: "Ubuntu Light","Microsoft YaHei UI Light";
+    color: white;
+    height: 300px;
+    font-size: 35px;
+}
+.mainpart{
+    border: 5px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    width: 92.5%;
+
+}
+
+p {
+    opacity: 1.0;
+}
+p code{
+
+    font-family: consolas;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #F6F8FA;
+    color: #3c4858;
+}
+pre{
+    border-radius: 15px;
+}
+pre code{
+    font-family: consolas;
+    font-size: 16px;
+
+}
+/*
+#back {
+    position: bottom;
+    margin:0;
+    padding:0;
+
+    max-width: 100%;
+    height: auto;
+
+}
+*/
+#head{
+    color: white;
+    font-size: 32px;
+    background: url("../img/background.jpg");
+}
+#gotopost:link {
+color: #3c4858; /*color of unvisited links*/
+}
+#gotopost:visited{
+    color: #3c4858;
+}
+#gotopost:hover{
+    color: #66ccff;
+}
+a {
+text-decoration: none; /*delete underline*/
+color: #66ccff;
+}
+
+.detail{
+color: #718099;
+}
+#nav-container{
+    background-color: white;
+    left: 0%;
+    right: 0%;
+}
+
+#for-nav{
+    color: white;
+    font-family: "Ubuntu","Microsoft YaHei UI Light";
+    font-size: 32px;
+    float: left;
+    padding: 0.8% 0.8%;
+}
+#static-page{
+    color: white;
+    font-family: "Microsoft YaHei UI Light";
+    font-size: 15px;
+    float: right;
+    padding: 3% 3%;
+    display: block;
+
+    top: 0px;
+    left: 0px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
