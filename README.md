@@ -31,7 +31,7 @@ python manage.py runserver
 
 ## 配置
 打开[settings.py](/blog/settings.py)进行配置
-在[detail.html](themes\origin\templates\detail.html)和[pages.html](themes\origin\templates\pages.html)进行Gitalk配置
+在[detail.html](themes/origin/templates/detail.html)和[pages.html](themes/origin/templates/pages.html)进行Gitalk配置
 ## TODO LIST
 * 支持LaTeX
 
