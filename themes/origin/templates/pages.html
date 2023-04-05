@@ -5,16 +5,17 @@
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
+
 </head>
 <body>
 
-<h1 class="blog-title">{{ page.title }}</h1>
+<div id="block">
     <div class="mainpart">
         {{page.content|safe}}
     </div>
 </br>
 </br>
-    <div id="gitalk-container" class="mainpart">
+    <div id="gitalk-container" >
         <script>
         var gitalk = new Gitalk({
             clientID: 'GitHub Application Client ID',
@@ -28,6 +29,7 @@
         gitalk.render('gitalk-container')
     </script>
     </div>
+</div>
 </body>
 {% endblock content %}
 </html>

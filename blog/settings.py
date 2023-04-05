@@ -15,18 +15,24 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 #语言和时区122行
 #Markdown编辑器141行
 
-import os
+import os,yaml
 from pathlib import Path
+
+f = open('config.yml',encoding='utf-8')
+c = yaml.safe_load(f)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 os.path.join(BASE_DIR)
 
 
-VERSION = '1.1.1'
+VERSION = 'v1.2.0'
 #站点名称
 #the mane of the site
-SITE_NAME= 'Aeonium'
+SITE_NAME= c['site_name']
+
+#theme
+THEME = c['theme']
 
 #警告：不要让秘钥泄露！
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -34,9 +40,9 @@ SECRET_KEY = 'django-insecure-o(5n8dh=tr*(#ih2s(vad-((gh-yuak2k@3(1)p7-7mrex4uch
 
 #警告：务必在部署时将该值设置为FALSE
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = c['debug']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = c['allowed_hosts']
 
 
 # Application definition
@@ -72,7 +78,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'themes/origin/templates')
+            os.path.join(BASE_DIR,f'themes/{THEME}/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,9 +128,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 #语言
-LANGUAGE_CODE = 'zh-Hans'
+LANGUAGE_CODE = c['lang']
 #时区
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = c['time_zone']
 
 USE_I18N = True
 
@@ -134,7 +140,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'themes/'
+STATIC_URL = f'themes/{THEME}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -143,8 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #markdown编辑器
 MDEDITOR_CONFIGS = {
 'default':{
-    'width': '90%',  # 自定义编辑框宽度
-    'heigth': 500,   # 自定义编辑框高度
+    'width': c['mdeditor_configs']['width'],  # 自定义编辑框宽度
+    'heigth': c['mdeditor_configs']['height'],   # 自定义编辑框高度
     'toolbar': ["undo", "redo", "|",
                 "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
                 "h1", "h2", "h3", "h5", "h6", "|",
@@ -156,21 +162,22 @@ MDEDITOR_CONFIGS = {
     'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # 图片上传格式类型
     'image_folder': 'editor',  # 图片保存文件夹名称
     'theme': 'default',  # 编辑框主题 ，dark / default
-    'preview_theme': 'default',  # 预览区域主题， dark / default
-    'editor_theme': 'default',  # edit区域主题，pastel-on-dark / default
-    'toolbar_autofixed': True,  # 工具栏是否吸顶
-    'search_replace': True,  # 是否开启查找替换
-    'emoji': True,  # 是否开启表情功能
-    'tex': True,  # 是否开启 tex 图表功能
-    'flow_chart': True,  # 是否开启流程图功能
+    'preview_theme': c['mdeditor_configs']['theme'],  # 预览区域主题， dark / default
+    'editor_theme': c['mdeditor_configs']['theme'],  # edit区域主题，pastel-on-dark / default
+    'toolbar_autofixed': c['mdeditor_configs']['toolbar_autofixed'],  # 工具栏是否吸顶
+    'search_replace': c['mdeditor_configs']['search_replace'],  # 是否开启查找替换
+    'emoji': c['mdeditor_configs']['emoji'],  # 是否开启表情功能
+    'tex': c['mdeditor_configs']['tex'],  # 是否开启 tex 图表功能
+    'flow_chart': False,  # 是否开启流程图功能
     'sequence': True,  # 是否开启序列图功能
-    'watch': True,  # 实时预览
-    'lineWrapping': False,  # 自动换行
-    'lineNumbers': False  # 行号
+    'watch': c['mdeditor_configs']['watch'],  # 实时预览
+    'lineWrapping': c['mdeditor_configs']['lineWrapping'],  # 自动换行
+    'lineNumbers':  c['mdeditor_configs']['lineNumbers'], # 行号
     }
 }
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "themes"),
+    os.path.join(BASE_DIR, f"themes/{THEME}"),
+    os.path.join(BASE_DIR,'themes/highlight')
 )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')  #uploads必须存在，且在项目目录下
 MEDIA_URL = '/media/'   #你上传的文件和图片会默认存在/uploads/editor下

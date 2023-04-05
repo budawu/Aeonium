@@ -1,18 +1,46 @@
 .blog-title{
-    text-align: center;
+    text-align: center !important;
+    position: absolute;
     line-height: 220px;
-    font-family: "Ubuntu Light","Microsoft YaHei UI Light";
+    font-family: "Microsoft YaHei UI Light","Ubuntu Light";
     color: white;
+    opacity: 1;
     height: 300px;
-    font-size: 35px;
+    width: 94%;
+    left: 3%;
+    right: 3%;
+    font-size: 40px;
+    letter-spacing: 3px;
+    z-index: 3;
+    box-sizing: border-box;
+    text-shadow: 2px 2px 2px #666;
+
+
+}
+
+#block{
+    top: 340px;
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    z-index: 3;
+    left: 4%;
+    right: 4%;
 }
 .mainpart{
+
+
     border: 5px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: white;
     border-radius: 10px;
     padding: 20px;
-    width: 92.5%;
+    margin: 5px;
+
+
+
+
+
 
 }
 
@@ -33,10 +61,10 @@ pre{
 pre code{
     font-family: consolas;
     font-size: 16px;
+    overflow: scroll;
 
 }
-/*
-#back {
+back {
     position: bottom;
     margin:0;
     padding:0;
@@ -45,12 +73,21 @@ pre code{
     height: auto;
 
 }
-*/
+
 #head{
-    color: white;
-    font-size: 32px;
-    background: url("../img/background.jpg");
+    position: absolute !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 320px;
+	background: url(../img/background.jpg) no-repeat center center;
+    overflow: hidden;
+
 }
+
+
 #gotopost:link {
 color: #3c4858; /*color of unvisited links*/
 }
@@ -75,20 +112,25 @@ color: #718099;
 }
 
 #for-nav{
+    position: absolute;
     color: white;
     font-family: "Ubuntu","Microsoft YaHei UI Light";
     font-size: 32px;
     float: left;
-    padding: 0.8% 0.8%;
+    /*padding: 4% 4%;*/
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    opacity: 1;
 }
 #static-page{
     color: white;
     font-family: "Microsoft YaHei UI Light";
-    font-size: 15px;
+    font-size: 25px;
     float: right;
-    padding: 3% 3%;
+    padding: 2% 2%;
     display: block;
-
+    text-shadow: 2px 2px 2px #666;
     top: 0px;
     left: 0px;
 }
@@ -100,6 +142,9 @@ blockquote {
     padding: 0.5em 10px;
 
 }
+html{
+    background-color: #f5f5f5;
+}
 blockquote:before {
     color: #ccc;
     content: open-quote;
@@ -108,4 +153,18 @@ blockquote:before {
     margin-right: 0.25em;
     vertical-align: -0.4em;
   }
+
+#gitalk-container{
+
+    position: absolute;
+    border: 5px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    
+    left: 0.5%;
+    right: 0.5%;
+    z-index: 3;
+}
 

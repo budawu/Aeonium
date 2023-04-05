@@ -6,16 +6,20 @@
     <title >{{site_name}}</title>
 </head>
 <body>
-    <h1 class="blog-title">{{site_name}}</h1>
-    <ul class="mainpart">
-    {% for i in posts %}
-       <h3><a href="{% url 'aeonium:detail' i.id %}" id='gotopost'>{{ i.title }}</a></h3>
-       <p class="detail">{{ i.date}}</p>
-       <p class="detail">{{ i.text|slice:100 }}</p>
-    {% empty %}
-        Nothing is here~
-    {% endfor %}
-    </ul>
+
+<div id="block">
+    <div class="mainpart">
+        {% for i in posts %}
+
+            <h3><a href="{% url 'aeonium:detail' i.id %}" id='gotopost'>{{ i.title }}</a></h3>
+            <p class="detail">{{ i.date}}</p>
+            <p class="detail">{{ i.text|slice:100 }}</p>
+        {% empty %}
+            Nothing is here~
+        {% endfor %}
+    <br>
+    </div>
+</div>
 </body>
 </html>
 {% endblock content %}

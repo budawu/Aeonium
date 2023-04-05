@@ -12,10 +12,10 @@ Aeonium是一个极简的博客系统，基于Django。
 
 ## 快速开始
 环境：Python 3.11（或其他Django4支持的版本）
-Windows:
+Windows(在PowerShell):
 ```powershell
-Import-Module .\setup.ps1
-Set-AeonuiumUp(<虚拟环境名称>,<语法高亮主题>)
+Import-Module ".\setup.ps1"
+Set-AeoniumUp(<虚拟环境名称>,<语法高亮主题>)
 ```
 Mac和Linux：
 ```shell
@@ -30,8 +30,8 @@ python manage.py runserver
 进入站点的/admin页面
 
 ## 配置
-打开[settings.py](/blog/settings.py)进行配置
-在[detail.html](themes\origin\templates\detail.html)和[pages.html](themes\origin\templates\pages.html)进行Gitalk配置
+打开[config.yml](config.yml)进行配置
+在[detail.html](themes/origin/templates/detail.html)和[pages.html](themes/origin/templates/pages.html)进行Gitalk配置
 ## TODO LIST
 * 支持LaTeX
 

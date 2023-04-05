@@ -1,0 +1,27 @@
+#站点名称 the name of site
+site_name: Aeonium
+#主题 theme
+theme: origin
+#警告：务必在部署时将该值设置为FALSE
+# SECURITY WARNING: don't run with debug turned on in production!
+debug: true
+
+allowed_hosts:
+  - localhost
+
+lang: zh-Hans
+
+time_zone: Asia/Shanghai
+
+mdeditor_configs:
+  width: 90%
+  height: 500
+  theme: default
+  toolbar_autofixed: true # 工具栏是否吸顶
+  search_replace: true # 是否开启查找替换
+  emoji: true # 是否开启表情功能
+  tex: true # 是否开启 tex 图表功能
+  watch: true # 实时预览
+  lineWrapping: true # 自动换行
+  lineNumbers: true # 行号
+
