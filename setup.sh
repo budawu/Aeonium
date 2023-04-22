@@ -1,4 +1,4 @@
-#!/bin/sh
+#!usr/bin/env sh
 python -m venv $1
 $1/bin/activate
 pip install -r requirements.txt #下载依赖的包

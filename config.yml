@@ -8,6 +8,7 @@ debug: true
 
 allowed_hosts:
   - localhost
+  - '127.0.0.1'
 
 lang: zh-Hans
 

@@ -15,10 +15,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 #语言和时区122行
 #Markdown编辑器141行
 
-import os,yaml
+import os,yaml,json
 from pathlib import Path
 
 f = open('config.yml',encoding='utf-8')
+j = json.load(open('data.json','r'))
 c = yaml.safe_load(f)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 os.path.join(BASE_DIR)
 
 
-VERSION = 'v1.2.0'
+VERSION = 'v2.0.0 alpha'
 #站点名称
 #the mane of the site
 SITE_NAME= c['site_name']
@@ -36,7 +37,7 @@ THEME = c['theme']
 
 #警告：不要让秘钥泄露！
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o(5n8dh=tr*(#ih2s(vad-((gh-yuak2k@3(1)p7-7mrex4uch'
+SECRET_KEY = j["secret_key"]
 
 #警告：务必在部署时将该值设置为FALSE
 # SECURITY WARNING: don't run with debug turned on in production!
