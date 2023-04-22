@@ -12,19 +12,13 @@ Aeonium是一个极简的博客系统，基于Django。
 
 ## 快速开始
 环境：Python 3.11（或其他Django4支持的版本）
-Windows(在PowerShell):
-```powershell
-Import-Module ".\setup.ps1"
-Set-AeoniumUp(<虚拟环境名称>,<语法高亮主题>)
+    **警告：Aeonium CLI暂时无法正常使用**
+```sh
+python aeonium-cli.py setup [虚拟环境名称] [语法高亮主题]
 ```
-Mac和Linux：
-```shell
-setup.sh [虚拟环境名称] [语法高亮主题]
-```
-
-启动服务器：
-```
-python manage.py runserver
+## 启动服务器
+```sh
+python aeonium-cli.py sever [port]
 ```
 ## 编辑
 进入站点的/admin页面
