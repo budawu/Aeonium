@@ -12,20 +12,20 @@ Aeonium是一个极简的博客系统，基于Django。
 
 ## 快速开始
 环境：Python 3.11（或其他Django4支持的版本）
-    **警告：Aeonium CLI暂时无法正常使用**
+    Linux/MacOs:
 ```sh
-python aeonium-cli.py setup [虚拟环境名称] [语法高亮主题]
+sh setup.sh
 ```
-## 启动服务器
-```sh
-python aeonium-cli.py sever [port]
+Windows:
+```cmd
+powershell setup.ps1
 ```
 ## 编辑
 进入站点的/admin页面
 
 ## 配置
 打开[config.yml](config.yml)进行配置
-在[detail.html](themes/origin/templates/detail.html)和[pages.html](themes/origin/templates/pages.html)进行Gitalk配置
+在[config.origin.yml](themes/origin/config.origin.yml)进行Gitalk配置
 ## TODO LIST
 * 支持LaTeX
 

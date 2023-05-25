@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 <html>
 {% block content %}
 <head>
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://unpkg.com/js-yaml/dist/js-yaml.min.js"></script>
+
     <title>{{post.title}}</title>
 </head>
 <body>
@@ -16,18 +19,7 @@
     <br>
 
     <div id="gitalk-container" >
-        <script>
-        var gitalk = new Gitalk({
-            clientID: 'GitHub Application Client ID',
-            clientSecret: 'GitHub Application Client Secret',
-            repo: 'GitHub repo',
-            owner: 'GitHub repo owner',
-            admin:  ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
-            id: location.pathname,      // Ensure uniqueness and len
-            distractionFreeMode: false  // Facebook-like distraction
-        })
-        gitalk.render('gitalk-container')
-    </script>
+        <script src="{% static 'js/gitalk.js' %}"></script>
     </div>
 </div>
 </body>
