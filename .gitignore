@@ -1,4 +1,3 @@
-highlight.css
 migrations/
 __pycache__/
 *.sqlite3
