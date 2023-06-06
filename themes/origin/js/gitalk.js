@@ -1,3 +1,6 @@
+fetch('../../themes/origin/config.origin.yml')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 var gitalk = new Gitalk({
     clientID: 'id',
     clientSecret: 'clientSecret',

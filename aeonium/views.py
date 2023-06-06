@@ -10,7 +10,11 @@ spage = StaticPage.objects.all()
 def index(request):
     '''index page'''
     posts  = Blog.objects.order_by('-date')
-    context = {'posts':posts,'title':settings.SITE_NAME,'pages':spage}
+    context = {
+        'posts':posts,
+        'title':settings.SITE_NAME,
+        'pages':spage
+        }
     return render(request,'index.html',context)
 
 def detail(request,id):
@@ -23,7 +27,13 @@ def detail(request,id):
         'markdown.extensions.toc',
         ])
 
-    context = { 'post': article,'site_name': settings.SITE_NAME,'pages':spage,'title':article.title}
+    context = {
+        'post': article,
+        'site_name': settings.SITE_NAME,
+        'pages':spage,
+        'title':article.title
+        }
+
     return render(request, 'detail.html', context)
 
 def page(request,id):
@@ -35,5 +45,10 @@ def page(request,id):
         'markdown.extensions.codehilite',
         ]
     )
-    context = {'page':content,'site_name':settings.SITE_NAME,'pages':spage,'title':content.name}
+    context = {
+        'page':content,
+        'site_name':settings.SITE_NAME,
+        'pages':spage,
+        'title':content.name
+        }
     return render(request,'pages.html',context)
