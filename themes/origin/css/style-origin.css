@@ -83,6 +83,7 @@ back {
     z-index: 1;
     height: 320px;
 	background: url(../img/background.jpg) no-repeat center center;
+    background-size: cover;
     overflow: hidden;
 
 }
@@ -162,7 +163,7 @@ blockquote:before {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    
+
     left: 0.5%;
     right: 0.5%;
     z-index: 3;
