@@ -15,23 +15,35 @@ def index(request):
         'title':settings.SITE_NAME,
         'pages':spage
         }
+
     return render(request,'index.html',context)
 
 def detail(request,id):
     '''detail of the article'''
     article = Blog.objects.get(id=id)
-    article.text = markdown.markdown(article.text,
-        extensions=[
-        'markdown.extensions.extra',
+    md = markdown.Markdown(
+        extensions=['markdown.extensions.extra',
         'markdown.extensions.codehilite',
+        'markdown.extensions.tables',
         'markdown.extensions.toc',
         ])
-
+    article.text = md.convert(article.text)
+    comment = f'''
+<script src="https://utteranc.es/client.js"
+        repo="{settings.COMMENT_REPO}"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+    '''
     context = {
         'post': article,
         'site_name': settings.SITE_NAME,
         'pages':spage,
-        'title':article.title
+        'title':article.title,
+        'toc' : md.toc,
+        'comment': comment
         }
 
     return render(request, 'detail.html', context)
@@ -39,16 +51,27 @@ def detail(request,id):
 def page(request,id):
     '''static page for blog'''
     content = StaticPage.objects.get(id=id)
-    content.content = markdown.markdown(content.content,
-    extensions=[
-        'markdown.extensions.extra',
+    md = markdown.Markdown(
+        extensions=['markdown.extensions.extra',
         'markdown.extensions.codehilite',
-        ]
-    )
+        'markdown.extensions.tables',
+        'markdown.extensions.toc',
+        ])
+    content.content = md.convert(content.content)
+    comment = f'''
+<script src="https://utteranc.es/client.js"
+        repo="{settings.COMMENT_REPO}"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+    '''
     context = {
         'page':content,
         'site_name':settings.SITE_NAME,
         'pages':spage,
-        'title':content.name
+        'title':content.name,
+        'toc':md.toc
         }
     return render(request,'pages.html',context)

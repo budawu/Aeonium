@@ -25,4 +25,6 @@ mdeditor_configs:
   watch: true # 实时预览
   lineWrapping: true # 自动换行
   lineNumbers: true # 行号
-
+#Use utterances
+comments:
+  repo: ''

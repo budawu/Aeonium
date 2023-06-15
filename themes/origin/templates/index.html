@@ -13,7 +13,7 @@
 
             <h3><a href="{% url 'aeonium:detail' i.id %}" id='gotopost'>{{ i.title }}</a></h3>
             <p class="detail">{{ i.date}}</p>
-            <p class="detail">{{ i.text|slice:100 }}</p>
+            <p class="detail">{{i.text|slice:80}}</p>
         {% empty %}
             Nothing is here~
         {% endfor %}

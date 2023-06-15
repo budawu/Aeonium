@@ -35,6 +35,7 @@ SITE_NAME= c['site_name']
 #theme
 THEME = c['theme']
 
+COMMENT_REPO = c['comments']['repo']
 #警告：不要让秘钥泄露！
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = j["secret_key"]
