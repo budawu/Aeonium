@@ -8,7 +8,7 @@ Aeonium是一个极简的博客系统，基于Django。
 * 在线编辑器
 * 易于配置——甚至可以轻松地自己修改源代码
 * 在线编辑静态页面
-* 支持Gitalk
+* 支持Uttrances评论插件
 
 ## 快速开始
 环境：Python 3.11（或其他Django4支持的版本）
@@ -25,7 +25,7 @@ powershell setup.ps1
 
 ## 配置
 打开[config.yml](config.yml)进行配置
-在[config.origin.yml](themes/origin/config.origin.yml)进行Gitalk配置
+
 ## TODO LIST
 * 支持LaTeX
 
