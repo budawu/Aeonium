@@ -21,13 +21,23 @@ def index(request):
 def detail(request,id):
     '''detail of the article'''
     article = Blog.objects.get(id=id)
-    md = markdown.Markdown(
-        extensions=['markdown.extensions.extra',
-        'markdown.extensions.codehilite',
-        'markdown.extensions.tables',
-        'markdown.extensions.toc',
-        ])
-    article.text = md.convert(article.text)
+    if article.toc_enable == True:
+        article.text = markdown.markdown(article.text,
+        extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+        ]
+        )
+
+    else:
+        article.text = markdown.markdown(article.text,
+            extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            ]
+        )
+
     comment = f'''
 <script src="https://utteranc.es/client.js"
         repo="{settings.COMMENT_REPO}"
@@ -37,27 +47,37 @@ def detail(request,id):
         async>
 </script>
     '''
+
     context = {
         'post': article,
         'site_name': settings.SITE_NAME,
         'pages':spage,
         'title':article.title,
-        'toc' : md.toc,
-        'comment': comment
-        }
+
+        'comment': comment,
+    }
 
     return render(request, 'detail.html', context)
 
 def page(request,id):
     '''static page for blog'''
     content = StaticPage.objects.get(id=id)
-    md = markdown.Markdown(
-        extensions=['markdown.extensions.extra',
-        'markdown.extensions.codehilite',
-        'markdown.extensions.tables',
-        'markdown.extensions.toc',
-        ])
-    content.content = md.convert(content.content)
+    if content.toc_enable == True:
+        content.content = markdown.markdown(  content.content,
+        extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+        ]
+        )
+
+    else:
+            content.content = markdown.markdown(content.content,
+            extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            ]
+        )
     comment = f'''
 <script src="https://utteranc.es/client.js"
         repo="{settings.COMMENT_REPO}"
@@ -72,6 +92,6 @@ def page(request,id):
         'site_name':settings.SITE_NAME,
         'pages':spage,
         'title':content.name,
-        'toc':md.toc
+        'comment':comment,
         }
     return render(request,'pages.html',context)

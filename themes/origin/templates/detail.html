@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 <html>
+
 {% block content %}
 <head>
-
-
     <title>{{post.title}}</title>
+    <style>
+        .mainpart h1,h2,h3,h4,h5{
+            color: #1a202c;
+            font-weight: 550;
+        }
+        .mainpart{
+            color: #718099;
+        }
+
+    </style>
 </head>
 <body>
 <div id="block">
+
     <div class="mainpart" id="posts">
         {{post.text|safe}}
         <div>{{comment|safe}}</div>
     </div>
-    <div id="tocs">{{toc|safe}}</div>
     <br>
     <br>
 
